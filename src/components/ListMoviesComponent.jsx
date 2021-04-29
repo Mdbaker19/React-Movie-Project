@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import MovieService from "../service/MovieService";
 
 class ListMoviesComponent extends Component {
     constructor(props) {
@@ -7,19 +8,20 @@ class ListMoviesComponent extends Component {
         this.state = {
             movies : []
         }
+
+        this.view = this.view.bind(this);
     }
 
     componentDidMount() {
-        let obj = [{
-            title: "first",
-            id: 1
-        }, {title: "second",
-            id: 2},
-            {title: "third",
-            id: 3}]
-        this.setState( {
-            movies: obj
+        MovieService.getAllMovies().then(res => {
+            this.setState( {
+                movies: res.data
+            });
         });
+    }
+
+    view(id) {
+        this.props.history.push(`movies/${id}`);
     }
 
     render() {
@@ -27,8 +29,13 @@ class ListMoviesComponent extends Component {
             <div>
                 {
                     this.state.movies.map((movie, idx) => {
-                       return <div key={movie.id}>
-                           <p>{movie.title}</p>
+                        return <div className="card" key={movie.id}>
+                           <h3 className="card-title center-align">{movie.title}</h3>
+                               <p className="center-align">{movie.genre}</p>
+                               <p className="center-align">{movie.rating}</p>
+                           <div className="card-action">
+                               <button onClick={ () => this.view(movie.id)}>View More</button>
+                           </div>
                        </div>
                     })
                 }

@@ -4,6 +4,8 @@ import './App.css';
 import HeaderComponent from "./components/HeaderComponent";
 import ListMoviesComponent from "./components/ListMoviesComponent";
 import FooterComponent from "./components/FooterComponent";
+import ViewMovieComponent from "./components/ViewMovieComponent";
+import CreateAndViewComponent from "./components/CreateAndViewComponent";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
 
                 <Switch>
                     <Route path="/" exact component={ListMoviesComponent}/>
+                    <Route path="/movies/:id" exact component={ViewMovieComponent}/>
+                    <Route path="/add-movie/:id" exact component={CreateAndViewComponent}/>
                 </Switch>
 
             </div>
