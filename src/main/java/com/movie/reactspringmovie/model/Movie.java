@@ -56,11 +56,11 @@ public class Movie {
         this.title = title;
     }
 
-    public String getReleaseDate() {
+    public String getGenre() {
         return genre;
     }
 
-    public void setReleaseDate(String genre) {
+    public void setGenre(String genre) {
         this.genre = genre;
     }
 }
