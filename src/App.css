@@ -1,6 +1,7 @@
 .container {
     flex: 1 0 auto;
     color: #DD6E42 !important;
+    overflow: scroll;
 }
 .App {
     display: flex;

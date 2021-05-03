@@ -30,13 +30,13 @@ class ListMoviesComponent extends Component {
                 {
                     this.state.movies.map((movie, idx) => {
                         return <div className="card" key={movie.id}>
-                           <h3 className="card-title center-align">{movie.title}</h3>
-                               <p className="center-align">{movie.genre}</p>
-                               <p className="center-align">{movie.rating}</p>
-                           <div className="card-action">
-                               <button onClick={ () => this.view(movie.id)}>View More</button>
-                           </div>
-                       </div>
+                                 <h3 className="card-title center-align">{movie.title}</h3>
+                                 <p className="center-align">{movie.genre}</p>
+                                 <p className="center-align">{movie.rating}</p>
+                                 <div className="card-action">
+                                    <button onClick={ () => this.view(movie.id)}>View More</button>
+                                 </div>
+                               </div>
                     })
                 }
             </div>
