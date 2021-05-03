@@ -20,14 +20,26 @@ public class Movie {
     @Column(name = "genre")
     private String genre;
 
+    @Column(name = "image")
+    private String imageUrl;
+
+    @Column(name = "releaseDate")
+    private String releaseDate;
+
+    @Column(name = "overview", columnDefinition = "TEXT")
+    private String overview;
+
 
 
     public Movie() {
     }
 
-    public Movie(long id, String rating, String title, String genre) {
+    public Movie(long id, String imageUrl, String overview, String releaseDate, String rating, String title, String genre) {
         this.id = id;
+        this.releaseDate = releaseDate;
+        this.overview = overview;
         this.rating = rating;
+        this.imageUrl = imageUrl;
         this.title = title;
         this.genre = genre;
     }
@@ -62,5 +74,29 @@ public class Movie {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
     }
 }
